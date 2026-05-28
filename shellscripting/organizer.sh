@@ -6,12 +6,15 @@ log(){
 	echo "[$(date +%H:%M:%S)] $*"
 }
 
-dir_path=$1
 if [ $# -lt 1 ]; then
 	echo "Directory Path cannot be empty!"
+	echo "Usage: ./organizer.sh <dir_path>"
 	exit 1
+fi
 
-elif [ -d "$dir_path" ]; then
+dir_path=$1
+
+if [ -d "$dir_path" ]; then
 	cd "$dir_path"
 
 else
