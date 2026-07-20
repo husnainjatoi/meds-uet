@@ -23,6 +23,9 @@ endfunction
 
 initial begin
     
+    $dumpfile("dump.vcd"); 
+    $dumpvars(0, adder_tb);
+    
     $display("--- Starting Half Adder Tests ---");
     for(i = 0; i < 4; i++) begin
         {a, b} = i; #5;
