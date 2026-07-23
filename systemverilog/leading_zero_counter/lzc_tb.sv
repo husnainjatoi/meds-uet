@@ -41,9 +41,9 @@ initial begin
     num = 32'hFFFFFFFF; #10;
     check(count, exp_lzc(num), "All Ones (32'hFFFFFFFF)");
     
-    $display("\n--- Running 50+ Random Vectors ---");
+    $display("\n--- Running 50 Random Vectors ---");
     
-    for(int i=0; i<50; i++) begin
+    for(int i=0; i<51; i++) begin
         num = $urandom(); #10;
         test_name = $sformatf("Random vector %0d (32'h%08h)", i+1, num);
         check(count, exp_lzc(num), test_name);
