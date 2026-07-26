@@ -20,7 +20,7 @@ module csc(
             3'b001: t = 3'b010;
             3'b011: t = 3'b111;
             3'b100: t = 3'b011;
-            3'b111: t = 3'b000;
+            3'b111: t = 3'b111;
             default: t = count;
         endcase
     end
