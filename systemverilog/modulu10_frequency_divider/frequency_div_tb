@@ -1,0 +1,50 @@
+`timescale 1ns / 1ps
+
+module tb_mod10_divider();
+    logic rst;
+    logic div_out;
+    int edge_count = 0;
+    logic clk = 0;
+    bit first_edge_detected = 0;
+
+    mod10_divider dut (
+        .clk(clk), 
+        .rst(rst), 
+        .div_out(div_out)
+    );
+    
+    always #5 clk = ~clk;
+    
+    task automatic check(input int actual, input int expected, input string name);
+        if(actual !== expected)
+            $display("[FAIL] %s: Actual = %0d, Expected = %0d at Time = %0t", name, actual, expected, $time);
+        else
+            $display("[PASS] %s: Value = %0d at Time = %0t", name, actual, $time);
+    endtask
+    
+    always @(posedge clk) begin
+            if (rst) begin 
+                edge_count++; 
+            end
+        end
+    
+        always @(posedge div_out) begin
+            if (first_edge_detected) begin
+                check(edge_count, 10, "Mod-10 Ratio Check");
+            end 
+            else begin
+                first_edge_detected = 1;
+            end
+            edge_count = 0;
+        end
+    
+    initial begin
+            clk = 0;
+            rst = 0;
+            
+            #20;
+            rst = 1; #300;
+            
+            $finish;
+        end
+    endmodule
