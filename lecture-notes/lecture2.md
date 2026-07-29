@@ -1,10 +1,10 @@
-## Lecture 2: Combinational Logic
+# Lecture 2: Combinational Logic
 
-### CMOS Gate Structure
+## CMOS Gate Structure
 - If both networks ON -> short circuit (incorrect operation)
 - If both networks OFF -> floating output or undefined (may be acceptable)
 
-### Power Consumption
+## Power Consumption
 1. Dynamic Power Consumption:
 - Power used to charge capacitance as signals change (0 <-> 1)
 - C * $V^2$ * f \
@@ -17,11 +17,11 @@ C = capacitance of circuit, V = supply voltage, f = charging frequency of the ca
 3. Energy Consumption:
 - Power * Time
 
-### Moore’s Law
+## Moore’s Law
 - Transistor count doubles every ~2 years
 - Enables advances in computing power and cost efficiency
 
-### Logic Circuits
+## Logic Circuits
 - Composed of:
 1. Inputs
 2. Outputs
@@ -30,7 +30,7 @@ C = capacitance of circuit, V = supply voltage, f = charging frequency of the ca
 
 - Timing Specification (describes the delay between inputs changing and outputs responding)
 
-#### Types of Logic Circuits
+## Types of Logic Circuits
 ##### Combinational Logic
 - Memoryless
 - Outputs strictly dependent on inputs
@@ -39,14 +39,14 @@ C = capacitance of circuit, V = supply voltage, f = charging frequency of the ca
 - Has memory (can store data values)
 - Outputs determined by previous and current values of inputs
 
-### Boolean Algebra
+## Boolean Algebra
 - Algebra on 1s and 0s using AND, OR, and NOT operations.
 
 - **Goal:** Minimize boolean expressions to reduce hardware cost, area, latency, and energy. Enables automatic hardware synthesis.
 
 - **De Morgan's Law:** Useful for converting between logic functions (e.g., changing an OR gate to an AND gate with inverted inputs).
 
-### Standardized Function Representations
+## Standardized Function Representations
 #### Sum of Products (SOP) Form
 - Function is the OR (sum) of all input combinations that result in a 1.
 - **Minterm:** A product that includes all input variables. Evaluates to true for that specific row.
@@ -56,7 +56,7 @@ C = capacitance of circuit, V = supply voltage, f = charging frequency of the ca
 - Function is the AND (product) of all input variable combinations that result in a 0.
 - **Maxterm:** A sum that includes all input variables. Evaluates to zero for that specific row.
 
-### Combinational Building Blocks
+## Combinational Building Blocks
 #### Decoders
 - **Input pattern detector.**
 - Has N inputs and $2^N$ outputs.
