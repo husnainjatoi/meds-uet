@@ -1,6 +1,6 @@
-## Lecture 4: Sequential Logic II, Labs, Verilog
+# Lecture 4: Sequential Logic II, Labs, Verilog
 
-### Finite State Machine (FSM) Implementation
+## Finite State Machine (FSM) Implementation
 - Transition Table: It defines the current state, input conditions, and the resulting next state.
 - State Encoding: Assigning binary values to represent each state.
   - *Full/Binary Encoding:* Uses the minimum number of bits ($log_2(N)$ bits for N states). 
@@ -11,7 +11,7 @@
   2. State Register: Sequential logic that holds the current state and updates it at the clock edge.
   3. Output Logic: Combinational logic that generates the outputs based on the current state (Moore) or current state + inputs (Mealy).
 
-### Moore vs. Mealy FSM Trade-offs
+## Moore vs. Mealy FSM Trade-offs
 - **Moore Machine:**
   - Output depends *only* on the current state.
   - Usually requires more states than a Mealy machine.
@@ -21,7 +21,7 @@
   - Can often achieve the same behavior with fewer states.
   - Disadvantage: A glitch (short unstable pulse) on the input can propagate directly to the output. Additionally, it creates longer combinational logic paths from input to output, which can hurt timing performance.
 
-### FPGAs (Field Programmable Gate Arrays)
+## FPGAs (Field Programmable Gate Arrays)
 - **Concept:** A software-reconfigurable hardware substrate.
 - **Key Components:**
   - Lookup Tables (LUTs): Small programmable memories that can implement any boolean function of N inputs.
@@ -30,7 +30,7 @@
 - **Advantages:** High performance, high energy efficiency, low development cost compared to ASICs, short time-to-market, and highly flexible/reusable.
 - **Disadvantages:** Less power efficient and slower than custom-designed ASICs. The reconfigurability introduces significant area and latency overhead.
 
-### Hardware Description Languages (HDLs) - Verilog
+## Hardware Description Languages (HDLs) - Verilog
 - **Design Paradigms:**
   - Top-Down: Define the top-level module (e.g., CPU), break it into sub-modules (ALU, Control Unit), and continue down to basic primitives.
   - Bottom-Up: Build primitive gates, combine them into basic blocks (adders, multiplexers), and assemble those into complex systems.
