@@ -1,12 +1,12 @@
-## Lecture 3: Sequential Logic
+# Lecture 3: Sequential Logic
 
-### Logical Completeness
+## Logical Completeness
 - A set of gates is **logically complete** if it can implement any truth table.
 - {AND, OR, NOT} is logically complete.
 - NAND by itself is logically complete.
 - NOR by itself is logically complete.
 
-### Combinational Blocks
+## Combinational Blocks
 #### Equality Checker (Comparator)
 - Checks if two n-bit values are exactly the same.
 - Built using XNOR gates for bitwise comparison (outputs 1 if bits match).
@@ -25,16 +25,16 @@
 - **Shared Bus Application:** Allows multiple components (e.g., CPU, Memory, Ethernet) to connect to a single shared bus. Control logic ensures only one component's tri-state buffer is enabled at any given time to prevent short circuits and collisions.
 - Can also be used to build efficient multiplexers.
 
-### Logic Simplification and Automation
+## Logic Simplification and Automation
 - EDA tools automate logic simplification to optimize latency, area, and power.
 - Uniting Theorem: If changing a variable's value does not change the function's output, that variable can be eliminated.
 - Don't Cares (X): Used in truth tables to indicate that an input's value does not affect the output. Simplifies boolean expressions heavily (e.g., used to simplify Priority Circuits).
 
-### Introduction to Sequential Logic
+## Introduction to Sequential Logic
 - **Combinational Logic:** Output depends *only* on current inputs.
 - **Sequential Logic:** Output depends on current inputs AND past inputs. Contains memory/storage elements.
 
-### Storage Elements
+## Storage Elements
 #### Cross-Coupled Inverters
 - The most basic storage element. Two inverters wired in a loop.
 - Has two stable states (storing a 0 or a 1) and one unstable (metastable) state.
@@ -62,7 +62,7 @@
   - Address Decoder: Selects which register to read from or write to based on the provided address bits.
   - Multiplexer: Routes the selected register's data to the memory output.
 
-### Finite State Machines (FSMs) and The Clock
+## Finite State Machines (FSMs) and The Clock
 - A discrete-time model of a stateful system.
 - Consists of: Finite states, external inputs, external outputs, explicit state transitions, and output generation logic.
 - Built using a **State Register** (sequential), **Next State Logic** (combinational), and **Output Logic** (combinational).
@@ -70,7 +70,7 @@
   - Asynchronous: Transitions happen whenever inputs change (prone to race conditions and bugs).
   - Synchronous: State transitions are synchronized globally by a **Clock** signal.
 
-### Edge-Triggered State Elements
+## Edge-Triggered State Elements
 - The Problem with Latches in FSMs: A D-Latch is *level-triggered*. If the clock is high, the output continuously tracks the input. This causes uncontrolled feedback loops in state machines, as the state would change randomly during a single cycle.
 - D Flip-Flop:
   - Created by cascading two D Latches in a Master-Slave configuration with inverted clock inputs.
